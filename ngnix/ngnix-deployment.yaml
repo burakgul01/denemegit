@@ -1,28 +1,20 @@
-apiVersion: apps/v1 # Changed from apps/v1
-kind: Rollout # Changed from Deployment
-# ----- Everything below this comment is the same as a deployment -----
+
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: my-nginx
 spec:
-  replicas: 5
   selector:
     matchLabels:
-      app: my-nginx
+      run: my-nginx
+  replicas: 2
   template:
     metadata:
       labels:
-        app: my-nginx
+        run: my-nginx
     spec:
       containers:
       - name: my-nginx
-        image: nginx
+        image: 'nginx'
         ports:
         - containerPort: 80
-  minReadySeconds: 30
-  revisionHistoryLimit: 3
-  strategy:
-  # ----- Everything above this comment are the same as a deployment -----
-    canary: # A new field that used to provide configurable options for a Canary strategy
-      steps:
-      - setWeight: 20
-      - pause: {}

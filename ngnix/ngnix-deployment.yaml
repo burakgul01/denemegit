@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-nginx
-        image: 'registry.siberyildiz.com/root/deneme_build:master'
+        image: 'ngnix'
         ports:
         - containerPort: 80
 

@@ -2,19 +2,19 @@ apiVersion: argoproj.io/v1alpha1 # Changed from apps/v1
 kind: Rollout # Changed from Deployment
 # ----- Everything below this comment is the same as a deployment -----
 metadata:
-  name: example-rollout
+  name: my-nginx
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: nginx
+      app: my-nginx
   template:
     metadata:
       labels:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: my-nginx
         image: nginx:1.15.4
         ports:
         - containerPort: 80

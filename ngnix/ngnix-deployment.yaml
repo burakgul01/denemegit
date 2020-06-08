@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-nginx
-        image: 'nginxv'
+        image: 'nginx'
         ports:
         - containerPort: 80
 

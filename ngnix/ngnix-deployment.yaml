@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: test
+  namespace: default
   name: my-nginx
   annotations:
     argocd.argoproj.io/sync-options: Prune=true
